@@ -10,15 +10,17 @@
 html {
   font-size: 18px;
 }
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 img {
   display: block;
-  width: 100%;
   border-style: none;
+  height: auto;
 }
 body {
   display: flex;
@@ -26,25 +28,18 @@ body {
   align-items: center;
   justify-content: space-evenly;
   font-family: 'Kumbh Sans', sans-serif;
-  font-size: 18px;
   color: var(--color-blue);
   background-color: var(--color-cyan);
   padding: 2rem;
   min-height: 100vh;
 }
 body {
-  background: url('../images/bg-pattern-top.svg'),
-    url('../images/bg-pattern-bottom.svg');
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100%, 100%;
-  background-position: -150px -250px, 250px 250px;
+  background-color: var(--color-dark-cyan);
+  background-image: url(../images/bg-pattern-top.svg),
+    url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right 52vw bottom 34vh, left 49vw top 50vh;
   background-color: var(--color-cyan);
-}
-@media only screen and (min-width: 600px) {
-  body {
-    background-size: 60%, 75%;
-    background-position: -250px -500px, 600px 500px;
-  }
 }
 .card {
   background-color: #fff;
@@ -55,9 +50,10 @@ body {
 .profile {
   position: relative;
   height: 15rem;
+  font-weight: 400;
+  color: var(--color-gray);
 }
 .profile-photo {
-  display: block;
   position: absolute;
   border-radius: 50%;
   width: 30%;
@@ -78,11 +74,7 @@ body {
 }
 .profile-name {
   font-weight: 700;
-}
-.profile-age,
-.profile-location {
-  font-weight: 400;
-  color: var(--color-gray);
+  color: var(--color-blue);
 }
 .profile-location {
   font-size: 0.7rem;
@@ -90,19 +82,18 @@ body {
 }
 .stats-list {
   display: flex;
+  color: var(--color-blue);
+  list-style: none;
   justify-content: space-around;
   text-align: center;
   border-top: 2px solid var(--color-grayblueAlpha);
-}
-.stats-item {
-  padding: 2rem 0;
   font-weight: 700;
-}
-.stats-item .count {
-  padding-bottom: 0.5rem;
+  padding: 2rem 0;
 }
 .stats-item .label {
+  display: block;
   font-size: 0.6rem;
+  padding-top: 0.5rem;
   color: var(--color-gray);
   letter-spacing: 1px;
 }
