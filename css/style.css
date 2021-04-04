@@ -1,113 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
-
 :root {
-  --color-cyan: hsl(185, 75%, 39%);
-  --color-blue: hsl(229, 23%, 23%);
-  --color-gray: hsl(227, 10%, 46%);
-  --color-grayblue: hsl(0, 0%, 59%);
-  --color-grayblueAlpha: hsla(0, 0%, 59%, 60%);
-}
-html {
-  font-size: 18px;
+  --font-heading: "Kumbh Sans", sans-serif;
+  --font-text: "Roboto", sans-serif;
 }
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
-img {
-  display: block;
-  border-style: none;
-  height: auto;
+html {
+  font-size: 18px;
 }
 body {
+  background-color: hsl(268, 19%, 20%);
+  font-family: var(--font-text);
+  color: hsl(55, 59%, 38%);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  font-family: 'Kumbh Sans', sans-serif;
-  color: var(--color-blue);
-  background-color: var(--color-cyan);
-  padding: 2rem;
+  justify-content: center;
   min-height: 100vh;
 }
-body {
-  background-color: var(--color-dark-cyan);
-  background-image: url(../images/bg-pattern-top.svg),
-    url(../images/bg-pattern-bottom.svg);
-  background-repeat: no-repeat;
-  background-position: right 52vw bottom 34vh, left 49vw top 50vh;
-  background-color: var(--color-cyan);
-}
-.card {
-  background-color: #fff;
-  width: 19rem;
-  border-radius: 15px;
-  overflow: hidden;
-}
-.profile {
-  position: relative;
-  height: 15rem;
-  font-weight: 400;
-  color: var(--color-gray);
-}
-.profile-photo {
-  position: absolute;
-  border-radius: 50%;
-  width: 30%;
-  border: 5px solid #fff;
-  background-color: #fff;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-}
-.profile-top {
-  background: url('../images/bg-pattern-card.svg') no-repeat;
-  background-size: cover;
-  height: 50%;
-}
-.profile-details {
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  padding-bottom: 1rem;
   text-align: center;
-  padding-top: 4rem;
 }
-.profile-name {
-  font-weight: 700;
-  color: var(--color-blue);
+h1 span {
+  color: #fff;
 }
-.profile-age {
-  color: var(--color-gray);
-  font-weight: 400;
-}
-.profile-location {
+li {
   font-size: 0.7rem;
-  padding-top: 0.7rem;
-}
-.stats-list {
-  display: flex;
-  color: var(--color-blue);
   list-style: none;
-  justify-content: space-around;
-  text-align: center;
-  border-top: 2px solid var(--color-grayblueAlpha);
-  font-weight: 700;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid hsla(55, 59%, 38%, 30%);
 }
-.stats-item .label {
-  display: block;
-  font-size: 0.6rem;
-  padding-top: 0.5rem;
-  color: var(--color-gray);
-  letter-spacing: 1px;
-}
-/* frontendmentor */
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 3rem;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
+a {
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
 }
