@@ -1,0 +1,221 @@
+/* BASICS STYLES */
+:root {
+  --DarkGrayishBlue: hsl(217, 19%, 35%);
+  --DarkBlue: hsl(214, 17%, 51%);
+  --GrayishBlue: hsl(212, 23%, 69%);
+  --LightGrayishBlue: hsl(210, 46%, 95%);
+  --font-heading: 'Manrope', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 13px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--DarkBlue);
+  line-height: 1.6;
+  background-color: var(--LightGrayishBlue);
+  min-height: 100vh;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ARTICLE STYLES */
+.container {
+}
+.preview {
+  background-color: #fff;
+  border-radius: 1rem;
+  width: 25rem;
+
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* hide image radius bleed */
+}
+.preview__image {
+  height: 15rem;
+}
+.preview__body {
+  padding: 3rem 2rem 1.5rem;
+  letter-spacing: 0.5px;
+}
+.preview__body h3 {
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.preview-footer {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  height: 6.15rem;
+}
+.normal-state,
+.share-state {
+  display: flex;
+  align-items: center;
+}
+.photo-wrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile {
+  margin-left: 2rem;
+  line-height: 1.6;
+}
+.profile-name {
+  font-weight: 700;
+}
+.profile-date {
+  opacity: 0.8;
+}
+.share-lead {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--GrayishBlue);
+}
+.social-links {
+  display: flex;
+  align-items: center;
+}
+.social-link {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 1.4rem;
+}
+.facebook {
+  background: url('../images/icon-facebook.svg') no-repeat;
+  background-position: center;
+}
+.twitter {
+  background: url('../images/icon-twitter.svg') no-repeat;
+  background-position: center;
+}
+.pinterest {
+  background: url('../images/icon-pinterest.svg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.footer-button {
+  background-color: var(--LightGrayishBlue);
+  margin-left: auto;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 50%;
+  outline: 0;
+  overflow: hidden;
+  transition: transform 150ms linear;
+}
+.footer-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-position: center;
+  object-fit: contain;
+}
+.preview-footer.share {
+  background-color: var(--DarkGrayishBlue);
+}
+.footer-button.share {
+  background-color: var(--DarkBlue);
+}
+.footer-button.share img {
+  filter: brightness(0) invert(1);
+}
+
+/* DESTOP */
+@media screen and (min-width: 800px) {
+  .container {
+    position: relative;
+  }
+  .preview {
+    display: grid;
+    grid-template-areas:
+      'image body'
+      'image share';
+    width: 56rem;
+  }
+  .preview-footer.share {
+    background-color: #fff;
+  }
+  .preview__image {
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+  }
+  .preview__body {
+    grid-area: body;
+    padding: 3rem 3rem 0;
+  }
+  .preview-footer {
+    grid-area: share;
+  }
+  .footer-button,
+  .footer-button.share {
+    background-color: var(--DarkBlue);
+  }
+  .footer-button img,
+  .footer-button.share img {
+    filter: brightness(0) invert(1);
+  }
+  .footer-button img:hover {
+    filter: brightness(1) sepia(1) hue-rotate(90deg) saturate(5);
+  }
+  .normal-state.hide {
+    display: flex;
+  }
+  .share-state {
+    /* display: none; */
+    background-color: var(--DarkGrayishBlue);
+  }
+  .share-state {
+    position: absolute;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    top: 9rem;
+    right: -4rem;
+  }
+  .arrow-down {
+    position: absolute;
+    bottom: -0.95rem;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 1rem solid var(--DarkGrayishBlue);
+  }
+}
+
+/* UTILITY */
+.hide {
+  display: none;
+}
+/* FRONTEND MENTOR STYLES */
+.attribution {
+  margin-top: 3rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
